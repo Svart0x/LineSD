@@ -23,3 +23,8 @@ The file will be saved in your Downloads folder as a Zip file.
 
 If your stickers pack contains Animations, you'll find an Animations folder inside the zip file.
 
+#TODO LIST
+
+- Automatically unzip and convert .png or .apng files into gif format
+- Find a way to send the sticker back to line (local server) or using another method
+- Resize the app and display the sticker picture when entering the ID
