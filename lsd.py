@@ -4,6 +4,7 @@
 
 
 
+from ast import Continue
 from turtle import title
 from PyQt6 import QtCore, QtGui, QtWidgets
 import PyQt6
@@ -19,6 +20,10 @@ import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 
 basedir = os.path.dirname(__file__)
+
+if not os.path.exists("tmp"):
+    os.makedirs("tmp")
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -152,7 +157,7 @@ class Ui_MainWindow(object):
         page = requests.get(f"https://store.line.me/stickershop/product/{inputID}/en")
         imageTag = f"https://stickershop.line-scdn.net/stickershop/v1/product/{inputID}/LINEStorePC/main.png"
         parsedPAge = BeautifulSoup(page.content, 'lxml')
-        os.mkdir("tmp")
+        
         path3 = f'tmp/{inputID}.png'
 
         #save_loc = os.path.expanduser("~/Downloads/" + inputID + ".png")
