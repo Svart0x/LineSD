@@ -12,7 +12,7 @@ If you wanna launch the python file just run it with python
 python lsd.py
 ```
 
-If you downloaded the Binary File for [MacOS](https://github.com/Svart0x/LineSD/raw/main/LSD_MacOS_Version.zip) or [Windows](https://github.com/Svart0x/LineSD/raw/main/LSD_Windows_Version.zip), just double click on it to execute it.
+MacOs and Windows binaries are coming soon, Stay tuned!
 
 You'll need to take the line sticker ID from the [Line store website](https://store.line.me/stickershop/home/general/en)
 
@@ -27,4 +27,4 @@ If your stickers pack contains Animations, you'll find an Animations folder insi
 
 - Automatically unzip and convert .png or .apng files into gif format
 - Find a way to send the sticker back to line (local server) or using another method
-- Resize the app and display the sticker picture when entering the ID
+- ~~Resize the app and display the sticker picture when entering the ID~~
