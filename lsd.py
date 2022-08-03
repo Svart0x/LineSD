@@ -13,9 +13,12 @@ import urllib.request, urllib.error
 import requests
 from bs4 import BeautifulSoup
 import re
+import ssl
+
+# TO ALLOW URLLIB TO DOWNLOAD ON MACOS
+ssl._create_default_https_context = ssl._create_unverified_context
 
 basedir = os.path.dirname(__file__)
-
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -149,12 +152,12 @@ class Ui_MainWindow(object):
         page = requests.get(f"https://store.line.me/stickershop/product/{inputID}/en")
         imageTag = f"https://stickershop.line-scdn.net/stickershop/v1/product/{inputID}/LINEStorePC/main.png"
         parsedPAge = BeautifulSoup(page.content, 'lxml')
-        path3 = R"${TEMP}" + inputID + ".png"
+        os.mkdir("tmp")
+        path3 = f'tmp/{inputID}.png'
 
         #save_loc = os.path.expanduser("~/Downloads/" + inputID + ".png")
         save_loc = os.path.expanduser(path3)
         
-
         
         titleTag = parsedPAge.find('p', {'class':'mdCMN38Item01Ttl'})
         title = titleTag.contents[0]
@@ -168,7 +171,6 @@ class Ui_MainWindow(object):
         pixmap = QPixmap(os.path.expanduser(path3))
         self.stickerImage.show()
         self.stickerImage.setPixmap(pixmap)
-        
 
 
     def Handle_Progress(self, blocknum, blocksize, totalsize):
@@ -198,6 +200,7 @@ class Ui_MainWindow(object):
         down_url2 = f'http://dl.stickershop.line.naver.jp/products/0/0/1/{inputID}/iphone/stickers@2x.zip' 
 
         save_loc = os.path.expanduser("~/Downloads/" + inputID + ".zip")
+        
  
         
         try:
