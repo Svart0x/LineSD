@@ -5,6 +5,12 @@ Line Stickers Downloader for Mac &amp; Windows allows you to download stickers p
 
 You are only allowed to download the stickers that you already bought in Line Application. This app has been made solely to be able to download your OWN stickers. You are the responsible in case of any wrong use of this app.
 
+# How to Install
+
+```
+python -m pip install -r requirements.txt
+```
+
 # How to Use
 
 If you wanna launch the python file just run it with python
